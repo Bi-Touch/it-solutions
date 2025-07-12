@@ -1,0 +1,89 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #1a1a3c, #2e2f56, #514176, #1d2b64);
+  background-size: 600% 600%;
+  animation: gradientBG 10s ease-in-out infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.nav-link:hover {
+  color: #7fdbff;
+}
+
+.icon-animate {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Glowing Line */
+.glow-line-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin-top: -2px;
+  margin-bottom: 3rem;
+}
+
+.glow-line {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #ffd700, #fff3b0, #ffd700);
+  border-radius: 9999px;
+  transform-origin: center;
+  transform: scaleX(0);
+  animation: drawLine 1.8s ease-out forwards, glowPulse 2s ease-in-out infinite 1.8s;
+}
+
+@keyframes drawLine {
+  0% { transform: scaleX(0); opacity: 0; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 6px #ffd70066, 0 0 12px #ffd700aa;
+  }
+  50% {
+    box-shadow: 0 0 14px #ffd700cc, 0 0 20px #ffd700ee;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.2) translateY(20px);
+    opacity: 0.2;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+#carousel-text::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

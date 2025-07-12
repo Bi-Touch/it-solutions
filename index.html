@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BiTouch Solutions</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link href="./styles.css" rel="stylesheet" />
+</head>
+<body class="text-white min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 w-full bg-black/50 backdrop-blur-md z-50 shadow-md">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
+      <h1 class="text-2xl font-bold">BiTouch</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#services" class="nav-link transition">Services</a>
+        <a href="#about" class="nav-link transition">About</a>
+        <a href="#contact" class="nav-link transition">Contact</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden focus:outline-none text-xl">&#9776;</button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+      <a href="#services" class="block nav-link">Services</a>
+      <a href="#about" class="block nav-link">About</a>
+      <a href="#contact" class="block nav-link">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="flex-grow">
+    <section id="hero-carousel" class="relative h-[80vh] overflow-hidden text-center flex items-center justify-center">
+      <div id="hero-overlay" class="absolute inset-0 z-10 transition-all duration-700 bg-black/40 pointer-events-none"></div>
+
+      <!-- Images -->
+      <div class="absolute inset-0 z-0">
+        <img src="/images/hero1.jpg" class="h-full w-full object-cover absolute transition-opacity duration-1000 opacity-100" alt="Hero 1">
+        <img src="/images/hero2.jpg" class="h-full w-full object-cover absolute transition-opacity duration-1000 opacity-0" alt="Hero 2">
+        <img src="/images/hero3.jpg" class="h-full w-full object-cover absolute transition-opacity duration-1000 opacity-0" alt="Hero 3">
+      </div>
+
+      <!-- Overlay for better contrast -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30 z-10"></div>
+
+      <!-- Glow -->
+      <div class="absolute w-[300px] h-[300px] bg-[#00bcd4] opacity-10 rounded-full blur-3xl animate-pulse-slow z-10"></div>
+
+      <!-- Carousel Text -->
+      <div class="relative z-20 text-white px-4">
+        <h2 id="carousel-text" class="text-4xl md:text-5xl font-bold"></h2>
+      </div>
+    </section>
+
+    <!-- Glowing Line -->
+    <div class="glow-line-wrapper">
+      <div class="glow-line"></div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-8 text-center">
+      <h3 class="text-3xl font-semibold mb-6" data-aos="fade-up">Our Services</h3>
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="w-48 p-6 bg-black/30 rounded-xl" data-aos="zoom-in">
+          <div class="text-4xl mb-2 icon-animate">💻</div>
+          <h4 class="text-xl font-bold mb-2">IT Support</h4>
+          <p class="text-gray-300 text-sm">24/7 support for your business systems.</p>
+        </div>
+        <div class="w-48 p-6 bg-black/30 rounded-xl" data-aos="zoom-in" data-aos-delay="100">
+          <div class="text-4xl mb-2 icon-animate">☁️</div>
+          <h4 class="text-xl font-bold mb-2">Cloud Services</h4>
+          <p class="text-gray-300 text-sm">Modern cloud integration and backups.</p>
+        </div>
+        <div class="w-48 p-6 bg-black/30 rounded-xl" data-aos="zoom-in" data-aos-delay="200">
+          <div class="text-4xl mb-2 icon-animate">🔒</div>
+          <h4 class="text-xl font-bold mb-2">Cybersecurity</h4>
+          <p class="text-gray-300 text-sm">Keep your systems safe and secure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-8 text-center">
+      <h3 class="text-3xl font-semibold mb-4" data-aos="fade-up">About Us</h3>
+      <p class="max-w-2xl mx-auto text-gray-300" data-aos="fade-in" data-aos-delay="100">
+        BiTouch Solutions is a team of passionate engineers committed to delivering future-proof IT infrastructure. We believe technology should empower, not overwhelm.
+      </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-8 text-center">
+      <h3 class="text-3xl font-semibold mb-4" data-aos="fade-up">Contact</h3>
+      <p class="max-w-md mx-auto text-gray-300 mb-6" data-aos="fade-up" data-aos-delay="100">
+        Let’s talk! Reach out and we’ll get back to you within 1 business day.
+      </p>
+      <a href="mailto:contact@technovasolutions.com" class="inline-block bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-6 rounded-full transition" data-aos="zoom-in">
+        Email Us
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+<footer class="bg-black/40 py-6 px-8 flex items-center justify-between text-sm text-gray-300">
+  <div><b>BiTouch Solutions</b> &copy; 2025 All rights reserved.</div>
+  <div class="flex space-x-6">
+    <!-- Facebook -->
+    <div class="relative group">
+      <i class="fab fa-facebook-f text-white text-sm transition duration-500 transform group-hover:rotate-[360deg] group-hover:text-blue-600"></i>
+      <span class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 text-xs bg-blue-600 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+        Facebook
+      </span>
+    </div>
+
+    <!-- Twitter -->
+    <div class="relative group">
+      <i class="fab fa-twitter text-white text-sm transition duration-500 transform group-hover:rotate-[360deg] group-hover:text-sky-400"></i>
+      <span class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 text-xs bg-sky-400 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+        Twitter
+      </span>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="relative group">
+      <i class="fab fa-linkedin-in text-white text-sm transition duration-500 transform group-hover:rotate-[360deg] group-hover:text-blue-700"></i>
+      <span class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 text-xs bg-blue-700 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+        LinkedIn
+      </span>
+    </div>
+
+    <!-- Instagram -->
+    <div class="relative group">
+      <i class="fab fa-instagram text-white text-sm transition duration-500 transform group-hover:rotate-[360deg] group-hover:text-pink-500"></i>
+      <span class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 text-xs bg-pink-500 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+        Instagram
+      </span>
+    </div>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./script.js" defer></script>
+</body>
+</html>
