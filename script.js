@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     curr = (curr + 1) % slides.length;
   }
 
-  cycleHero();
+  setTimeout(cycleHero, 200);
   setInterval(cycleHero, 5000);
+
 });
