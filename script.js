@@ -51,15 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function typeWriterEffect(text, element, speed = 50) {
-    element.textContent = '';
-    let i = 0;
-    const interval = setInterval(() => {
-      element.textContent += text.charAt(i);
-      i++;
-      if (i === text.length) clearInterval(interval);
-    }, speed);
+  element.textContent = '';
+  element.classList.remove('invisible'); // 👈 Make it visible before typing
+  let i = 0;
+  const interval = setInterval(() => {
+    element.textContent += text.charAt(i);
+    i++;
+    if (i === text.length) clearInterval(interval);
+   }, speed);
   }
-
+  
   function cycleHero() {
     updateSlide(curr);
     typeWriterEffect(texts[curr], textElement);
